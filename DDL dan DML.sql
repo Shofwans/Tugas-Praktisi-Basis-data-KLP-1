@@ -10,7 +10,7 @@ address varchar (255) not null,
 major varchar (100) not null,
 primary key (student_id)
 );
---desc students;
+desc students;
 
 -- membuat table courses --
 create table courses (
@@ -19,7 +19,7 @@ name varchar (255) not null,
 duration int not null,
 primary key (course_id)
 ); 
-#desc courses;
+desc courses;
 
 -- membuat table schedule --
 create table schedule (
@@ -32,20 +32,20 @@ primary key (schedule_id),
 foreign key (student_id) references students (student_id),
 foreign key (course_id) references courses (course_id)
 );
-#desc schedule;
+desc schedule;
 
---DML--
+-- DML--
 #masukkan data pada tabel students
 INSERT INTO students (`full name`, address, major)
 VALUE 
 ("Rendy Luis", "Jalan Sahabat", "Sistem Informasi"),
-("Muh. Shofwan Siswandi", "Jalan Perintis", "Sistem Informasi"),
+("Muh. Shofwan Siswandi", "Jalan Pettarani", "Sistem Informasi"),
 ("Indah Kurnia Ilahi", "Jalan Sahabat", "Sistem Informasi"),
 ("Selviani Amalia Kartika", "Jalan Andi Tonro", "Sistem Informasi"),
 ("Andi Maghfirah Inzani S.", "BTP", "Sistem Informasi"),
 ("Nur Hikmah", "Jalan Sejati", "Sistem Informasi"),
 ("Martahan Mikhael Butar B.", "Aspol Perintis", "Sistem Informasi");
-#select * from students;
+select * from students;
 
 -- menginput data pada table courses -- 
 INSERT INTO courses (name, duration)
@@ -54,7 +54,7 @@ VALUE
 ("Pemrograman Web", 90),
 ("Struktur Diskrit", 90),
 ("Riset Teknologi", 150);
-#select * from Courses;
+select * from Courses;
 
 -- menambahkan data pada table schedule --
 insert into schedule (Student_id, course_id, date, time)
@@ -66,7 +66,7 @@ VALUE
 (5, 3, '2022-10-13', '2022-10-13 16:00:00'),
 (6, 3, '2022-10-15', '2022-10-15 08:00:00'),
 (7, 1, '2022-10-19', '2022-10-19 08:00:00');
-#select * from schedule;
+select * from schedule;
 
 -- mengubah data pada table students -- 
 update students
@@ -78,6 +78,8 @@ UPDATE courses
 SET `duration` = "60"
 WHERE course_id = 4;
 
+-- Menggabungkan tabel id mahasiswa, nama course, 
+-- serta tanggal dan waktu course
 select St.student_id, Co.name, Sc. date, Sc.time
 from students as St
 inner join schedule as Sc
