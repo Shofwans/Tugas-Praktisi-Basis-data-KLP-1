@@ -11,10 +11,15 @@ GRANT SELECT
 ON db_praktisiSisfo
 TO '*'@'localhost';
 
-# Cek status hak akses user
-SHOW GRANTS FOR 'DosenSisfor'@'localhost';
+-- Menghapus akses tertentu (DROP) kepada semua user
+REVOKE DELETE
+ON db_praktisiSisfo
+FROM '*'@'localhost';
 
 # Menghapus hak akses user
 REVOKE INSERT
 ON db_praktisiSisfo
 FROM 'DosenSisfor'@'localhost';
+
+# Cek status hak akses user
+SHOW GRANTS FOR 'DosenSisfor'@'localhost';
