@@ -13,3 +13,8 @@ TO '*'@'localhost';
 
 # Cek status hak akses user
 SHOW GRANTS FOR 'DosenSisfor'@'localhost';
+
+# Menghapus hak akses user
+REVOKE INSERT
+ON db_praktisiSisfo
+FROM 'DosenSisfor'@'localhost';
