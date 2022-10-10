@@ -15,3 +15,11 @@ TO '*'@'localhost';
 REVOKE DELETE
 ON db_praktisiSisfo
 FROM '*'@'localhost';
+
+# Menghapus hak akses user
+REVOKE INSERT
+ON db_praktisiSisfo
+FROM 'DosenSisfor'@'localhost';
+
+# Cek status hak akses user
+SHOW GRANTS FOR 'DosenSisfor'@'localhost';
