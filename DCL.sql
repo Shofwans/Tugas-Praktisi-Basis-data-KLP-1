@@ -10,3 +10,8 @@ TO 'DosenSisfor'@'localhost';
 GRANT SELECT
 ON db_praktisiSisfo
 TO '*'@'localhost';
+
+-- Menghapus akses tertentu (DROP) kepada semua user
+REVOKE DELETE
+ON db_praktisiSisfo
+FROM '*'@'localhost';
